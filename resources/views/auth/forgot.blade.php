@@ -52,7 +52,7 @@
 											</div>
 											<div class="col-12">
 												<div class="text-start">
-													<p class="mb-0">Don't have an account yet? <a href="auth-basic-register.html">Sign up here</a>
+													<p class="mb-0">You have an account<a href="{{url('login')}}">Login</a>
 													</p>
 												</div>
 											</div>

@@ -80,6 +80,7 @@ class AuthController extends Controller
                     $user->remember_token = Str::random(30);
                     $user->save();
                     Mail::to($user->email)->send(new ForgotPasswordMail($user));
+                    return redirect()->back()->with('success', "Check your mail for password.");
                 }
                 else
                 {
