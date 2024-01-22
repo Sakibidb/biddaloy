@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
+    <title>Forgot Password</title>
 
     <!--plugins-->
     <link href="{{asset('public/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet">
@@ -29,49 +29,25 @@
            <div class="col-12 col-md-8 col-lg-6 col-xl-5 col-xxl-4 mx-auto">
             <div class="card border-3">
               <div class="card-body p-5">
-                  <img src="{{asset('public/assets/images/logo-icon.png')}}" class="mb-4" width="45" alt="">
-                  <h4 class="fw-bold">Get Started Now</h4>
-                  <p class="mb-0">Enter your credentials to login your account</p>
+                  
+                  <h4 class="fw-bold">Forgot Password</h4>
+                  <p class="mb-0">Enter your Mail Address to recover your password</p>
 
-                  <div class="row g-3 my-4">
-                    <div class="col-12 col-lg-6">
-                      <button class="btn btn-light py-2 font-text1 fw-bold d-flex align-items-center justify-content-center w-100"><img src="{{asset('public/assets/images/icons/google-2.png')}}" width="18" class="me-2" alt="">Log In with Google</button>
-                    </div>
-                    <div class="col col-lg-6">
-                      <button class="btn btn-light py-2 font-text1 fw-bold d-flex align-items-center justify-content-center w-100"><img src="{{asset('public/assets/images/icons/apple-logo.png')}}" width="18" class="me-2" alt="">Log In with Apple</button>
-                    </div>
-                  </div>
-
-                  <div class="separator section-padding">
-                    <div class="line"></div>
-                    <p class="mb-0 fw-bold">OR</p>
-                    <div class="line"></div>
-                  </div>
+                  
 
                   <div class="form-body mt-4">
-										<form class="row g-3">
+                    @include('_message')
+										<form class="row g-3" action="" method="post">
+                                            {{@csrf_field()}}
 											<div class="col-12">
 												<label for="inputEmailAddress" class="form-label">Email</label>
-												<input type="email" class="form-control" id="inputEmailAddress" placeholder="jhon@example.com">
+												<input type="email" required name="email" class="form-control" id="inputEmailAddress" placeholder="jhon@example.com">
 											</div>
-											<div class="col-12">
-												<label for="inputChoosePassword" class="form-label">Password</label>
-												<div class="input-group" id="show_hide_password">
-													<input type="password" class="form-control border-end-0" id="inputChoosePassword" value="12345678" placeholder="Enter Password"> 
-                          <a href="javascript:;" class="input-group-text bg-transparent"><i class="bi bi-eye-slash-fill"></i></a>
-												</div>
-											</div>
-											<div class="col-md-6">
-												<div class="form-check form-switch">
-													<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
-													<label class="form-check-label" for="flexSwitchCheckChecked">Remember Me</label>
-												</div>
-											</div>
-											<div class="col-md-6 text-end">	<a href="auth-basic-forgot-password.html">Forgot Password ?</a>
-											</div>
+											
+											
 											<div class="col-12">
 												<div class="d-grid">
-													<button type="submit" class="btn btn-primary">Login</button>
+													<button type="submit" class="btn btn-primary">Send Mail</button>
 												</div>
 											</div>
 											<div class="col-12">

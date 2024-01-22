@@ -36,6 +36,7 @@
                   
 
                   <div class="form-body mt-4">
+                    @include('_message')
 										<form class="row g-3" action="{{'login'}}" method="post">
                                             {{@csrf_field()}}
 											<div class="col-12">
@@ -55,7 +56,7 @@
 													<label class="form-check-label" for="remember">Remember Me</label>
 												</div>
 											</div>
-											<div class="col-md-6 text-end">	<a href="auth-basic-forgot-password.html">Forgot Password ?</a>
+											<div class="col-md-6 text-end">	<a href="{{url('forgot-password')}}">Forgot Password ?</a>
 											</div>
 											<div class="col-12">
 												<div class="d-grid">

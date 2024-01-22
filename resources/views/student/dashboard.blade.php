@@ -1,5 +1,4 @@
 @extends('layouts.app')
-@section('title', 'admin')
 @section('content')
 
 <main class="page-content">

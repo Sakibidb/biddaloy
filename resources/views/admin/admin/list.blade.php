@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'admin list')
 @section('content')
 <main class="page-content">
 <h6 class="mb-0 text-uppercase">Admin List</h6>
