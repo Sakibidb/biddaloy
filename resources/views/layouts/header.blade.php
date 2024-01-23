@@ -412,7 +412,7 @@
               <img src="{{asset('public/assets/images/logo-icon.png')}}" class="logo-img" alt="">
             </div>
             <div class="logo-name flex-grow-1">
-              <h5 class="mb-0">Roksyn</h5>
+              <h5 class="mb-0">BIDDALOY</h5>
             </div>
             <div class="sidebar-close ">
               <span class="material-symbols-outlined">close</span>
@@ -438,11 +438,7 @@
                 </li>
 
               </ul>
-              
-                
-              
-
-              
+    
           </div>
           <div class="sidebar-bottom dropdown dropup-center dropup">
               <div class="dropdown-toggle d-flex align-items-center px-3 gap-3 w-100 h-100" data-bs-toggle="dropdown">
@@ -451,7 +447,7 @@
                 </div>
                 <div class="user-info">
                   <h5 class="mb-0 user-name">{{Auth::user()->name}}</h5>
-                  <p class="mb-0 user-designation">UI Engineer</p>
+                  <p class="mb-0 user-designation">{{Auth::user()->name}}</p>
                 </div>
               </div>
               <ul class="dropdown-menu dropdown-menu-end">
@@ -501,38 +497,7 @@
             </div>
             <button type="button" class="btn-close d-xl-none" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
-              <div class="search-list">
-                 <p class="mb-1">Html Templates</p>
-                 <div class="list-group">
-                    <a href="javascript:;" class="list-group-item list-group-item-action active align-items-center d-flex gap-2"><i class="bi bi-filetype-html fs-5"></i>Best Html Templates</a>
-                    <a href="javascript:;" class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i class="bi bi-award fs-5"></i>Html5 Templates</a>
-                    <a href="javascript:;" class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i class="bi bi-box2-heart fs-5"></i>Responsive Html5 Templates</a>
-                    <a href="javascript:;" class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i class="bi bi-camera-video fs-5"></i>eCommerce Html Templates</a>
-                 </div>
-                 <p class="mb-1 mt-3">Web Designe Company</p>
-                 <div class="list-group">
-                    <a href="javascript:;" class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i class="bi bi-chat-right-text fs-5"></i>Best Html Templates</a>
-                    <a href="javascript:;" class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i class="bi bi-cloud-arrow-down fs-5"></i>Html5 Templates</a>
-                    <a href="javascript:;" class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i class="bi bi-columns-gap fs-5"></i>Responsive Html5 Templates</a>
-                    <a href="javascript:;" class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i class="bi bi-collection-play fs-5"></i>eCommerce Html Templates</a>
-                 </div>
-                 <p class="mb-1 mt-3">Software Development</p>
-                 <div class="list-group">
-                    <a href="javascript:;" class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i class="bi bi-cup-hot fs-5"></i>Best Html Templates</a>
-                    <a href="javascript:;" class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i class="bi bi-droplet fs-5"></i>Html5 Templates</a>
-                    <a href="javascript:;" class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i class="bi bi-exclamation-triangle fs-5"></i>Responsive Html5 Templates</a>
-                    <a href="javascript:;" class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i class="bi bi-eye fs-5"></i>eCommerce Html Templates</a>
-                 </div>
-                 <p class="mb-1 mt-3">Online Shoping Portals</p>
-                 <div class="list-group">
-                    <a href="javascript:;" class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i class="bi bi-facebook fs-5"></i>Best Html Templates</a>
-                    <a href="javascript:;" class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i class="bi bi-flower2 fs-5"></i>Html5 Templates</a>
-                    <a href="javascript:;" class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i class="bi bi-geo-alt fs-5"></i>Responsive Html5 Templates</a>
-                    <a href="javascript:;" class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i class="bi bi-github fs-5"></i>eCommerce Html Templates</a>
-                 </div>
-              </div>
-          </div>
+        
         </div>
       </div>
     </div>

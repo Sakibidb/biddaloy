@@ -5,7 +5,7 @@
 <h6 class="mb-0 text-uppercase">Admin List</h6>
 @include("_message")
 <div style="text-align: right;">
-<a href="{{url('admin/admin/add')}}" class="btn btn primary">Add new admin</a>
+<a href="{{url('admin/admin/add')}}" class="btn btn-success btn-sm">Add new admin</a>
 </div>
 
 						<hr>
@@ -31,10 +31,10 @@
 											<td>{{$value->email}}</td>
 											<td>{{$value->created_at}}</td>
 											<td>
-                                    			<a href="{{url('admin/admin/edit')}}" class="btn btn-success btn-sm">Edit</a>
+                                    			<a href="{{url('admin/admin/edit/'.$value->id)}}" class="btn btn-success btn-sm">Edit</a>
                                 			</td>
                                 			<td>
-                                    			<a href="{{url('admin/admin/delete')}}" class="btn btn-danger btn-sm">Delete</a>
+                                    			<a href="{{url('admin/admin/delete/'.$value->id)}}" class="btn btn-danger btn-sm">Delete</a>
                                 			</td>
 										</tr>
 										@endforeach

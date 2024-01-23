@@ -47,4 +47,26 @@ class AdminController extends Controller
                 
             }
         }
+        public function update($id, Request $request)
+    {
+        //dd($request->all());
+        $user = User::getSingle($id);
+        $user->name = trim($request->name);
+        $user->email= trim($request->email);
+        if(!empty($request->password))
+        {
+            $user->password = Hash::make($request->password);
+        }
+        $user->save();
+
+        return redirect('admin/admin/list')->with('success', "Admin Successfully Updated");
+    }
+    public function delete($id)
+    {
+        $user = User::getSingle($id);
+        $user ->is_delete = 1;
+        $user->delete();
+        return redirect('admin/admin/list')->with('success', "Admin Successfully Deleted");
+
+    }
 }
