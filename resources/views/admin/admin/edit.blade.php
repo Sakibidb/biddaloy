@@ -19,14 +19,17 @@
 						<div class="row g-3">
 							<div class="col-12 col-lg-6">
 								<label for="Name" class="form-label">Name</label>
-								<input type="text" class="form-control" required placeholder="Name" name="name" value="{{$getRecord->name}}">
+								<input type="text" class="form-control" required placeholder="Name" name="name" value="{{ old('name', $getRecord->name)}}">
+								
+
 							</div>
                         </div>
                         <div class="row g-3">
                             <div class="col-12 col-lg-6">
 								<label for="email" class="form-label">Email</label>
-								<input type="email" class="form-control" required placeholder="Email" name="email" value="{{$getRecord->email}}">
+								<input type="email" class="form-control" required placeholder="Email" name="email" value="{{old('email',$getRecord->email)}}">
 							</div>
+							<div class="text-danger">{{$errors->first('email')}}</div>
                         </div>
                         <div class="row g-3">
                             <div class="col-12 col-lg-6">

@@ -26,6 +26,7 @@
                             <div class="col-12 col-lg-6">
 								<label for="email" class="form-label">Email</label>
 								<input type="email" class="form-control" placeholder="Email" name="email" value="{{old('email')}}">
+								<div class="text-danger">{{$errors->first('email')}}</div>
 							</div>
                         </div>
                         <div class="row g-3">
@@ -38,6 +39,9 @@
 							<button class="btn btn-primary px-4" type="submit">Submit<i class='bx bx-right-arrow-alt ms-2'></i></button>
 						</div>
 				</div>
+			</div>
+		</div>
+	</div>
 </main>
 
 

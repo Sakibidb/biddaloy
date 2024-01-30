@@ -2,13 +2,40 @@
 @section('title', 'admin list')
 @section('content')
 <main class="page-content">
-<h6 class="mb-0 text-uppercase">Admin List</h6>
+<h4 class="mb-0 text-uppercase">Admin List (Total: {{$getRecord -> total()}})</h4>
+
+<hr>
+<h6>Admin Search</h6>
+<div class="card-body">
+	<div class="bs-stepper-content">
+		
+		<form action="" method="get">
+			<div class="row g-3">
+				<div class="col-12 col-lg-4">
+					<input type="text" class="form-control" placeholder="Name" name="name" value="{{Request::get('name')}}">
+				</div>
+			</div>
+			<div class="row g-3">
+				<div class="col-12 col-lg-4">
+					<input type="email" class="form-control" placeholder="Email" name="email" value="{{Request::get('mail')}}">
+				</div>
+			</div>
+			
+			<div class="col-12 col-lg-6">
+				<button class="btn btn-primary px-4" type="submit">Search<i class='bx bx-right-arrow-alt ms-2'></i></button>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+<hr>
 @include("_message")
 <div style="text-align: right;">
 <a href="{{url('admin/admin/add')}}" class="btn btn-success btn-sm">Add new admin</a>
 </div>
-
-						<hr>
+						
+						<h6>Admin List</h6>
 						
 						<div class="card">
 							<div class="card-body">
@@ -24,8 +51,10 @@
 										</tr>
 									</thead>
 									<tbody>
+										{{-- @php $no = 1 @endphp --}}
 										@foreach($getRecord as $value)
 										<tr>
+											{{-- <td>{{$no++}}</td> --}}
 											<td>{{$value->id}}</td>
 											<td>{{$value->name}}</td>
 											<td>{{$value->email}}</td>
@@ -40,6 +69,10 @@
 										@endforeach
 									</tbody>
 								</table>
+								<div style="padding: 10px; float:right " >
+								{!! $getRecord->appends(Illuminate\Support\Facades\Request::except('page'))->links() !!}
+								</div>
+
 							</div>
 						</div>
 
