@@ -9,20 +9,26 @@
 <div class="card-body">
 	<div class="bs-stepper-content">
 		
-		<form action="" method="get">
+		<form action="" method="get" style="display: flex;">
 			<div class="row g-3">
-				<div class="col-12 col-lg-4">
-					<input type="text" class="form-control" placeholder="Name" name="name" value="{{Request::get('name')}}">
+				<div class="col-12 col-lg-12">
+					<input type="text" class="form-control" placeholder="Name" name="name" value="{{Request::get('name') }}">
 				</div>
 			</div>
 			<div class="row g-3">
-				<div class="col-12 col-lg-4">
-					<input type="email" class="form-control" placeholder="Email" name="email" value="{{Request::get('mail')}}">
+				<div class="col-12 col-lg-12">
+					<input type="text" class="form-control" placeholder="Email" name="email" value="{{ Request::get('mail') }}">
+				</div>
+			</div>
+			<div class="row g-3">
+				<div class="col-12 col-lg-12">
+					<input type="date" class="form-control" placeholder="Date" name="date" value="{{ Request::get('date') }}">
 				</div>
 			</div>
 			
 			<div class="col-12 col-lg-6">
-				<button class="btn btn-primary px-4" type="submit">Search<i class='bx bx-right-arrow-alt ms-2'></i></button>
+				<button class="btn btn-success px-4" type="submit">Search<i class='bx bx-right-arrow-alt ms-2'></i></button>
+				<a href="{{url('admin/admin/list') }}" class="btn btn-warning px-4">Reset<i class='bx bx-right-arrow-alt ms-2'></i></a>
 			</div>
 		</form>
 	</div>
@@ -58,7 +64,7 @@
 											<td>{{$value->id}}</td>
 											<td>{{$value->name}}</td>
 											<td>{{$value->email}}</td>
-											<td>{{$value->created_at}}</td>
+											<td>{{date('d-m-y H:i A', strtotime($value->created_at))}}</td>
 											<td>
                                     			<a href="{{url('admin/admin/edit/'.$value->id)}}" class="btn btn-success btn-sm">Edit</a>
                                 			</td>

@@ -436,6 +436,13 @@
                     <div class="menu-title">Admin</div>
                   </a>
                 </li>
+                <li>
+                  <a href="{{url('admin/class/list')}}">
+                  <div class="parent-icon"><span class="material-symbols-outlined">account_circle</span>
+                    </div>
+                    <div class="menu-title">Class</div>
+                  </a>
+                </li>
 
               </ul>
     
