@@ -423,21 +423,22 @@
               <!--navigation-->
               <ul class="metismenu" id="menu">
                 <li>
-                  <a href="{{url('admin/dashboard')}}">
+                  <a href="{{url('admin/dashboard')}}" class="nav-link @if(Request::segment(2)== 'dashboard')active @endif">
                     <div class="parent-icon"><span class="material-symbols-outlined">home</span>
                     </div>
                     <div class="menu-title">Dashboard</div>
                   </a>
                 </li>
                 <li>
-                  <a href="{{url('admin/admin/list')}}">
+                  <a href="{{url('admin/admin/list')}}" class="nav-link @if(Request::segment(2)== 'admin')active @endif">
                   <div class="parent-icon"><span class="material-symbols-outlined">account_circle</span>
                     </div>
                     <div class="menu-title">Admin</div>
                   </a>
                 </li>
+
                 <li>
-                  <a href="{{url('admin/class/list')}}">
+                  <a href="{{url('admin/class/list')}}" class="nav-link @if(Request::segment(2)== 'class')active @endif">
                   <div class="parent-icon"><span class="material-symbols-outlined">account_circle</span>
                     </div>
                     <div class="menu-title">Class</div>
