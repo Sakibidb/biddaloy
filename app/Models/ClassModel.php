@@ -34,4 +34,13 @@ class ClassModel extends Model
         ->paginate(20);
         return $return;
     }
+    static public function getClass()
+    {
+        $return = ClassModel::select('class.*')
+        ->join('users', 'users.id', 'class.created_by')
+        ->where('class.is_delete', '=', 0)
+        ->orderBy('class.id', 'asc')
+        ->get();
+        return $return;
+    }
 }

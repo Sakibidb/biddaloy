@@ -39,4 +39,13 @@ class SubjectModel extends Model
         ->paginate(3);
         return $return;
     }
+    static public function getSubject()
+    {
+        $return = SubjectModel::select('subject.*')
+        ->join('users', 'users.id', 'subject.created_by')
+        ->where('subject.is_delete', '=', 0)
+        ->orderBy('subject.id', 'asc')
+        ->get();
+        return $return;
+    }
 }

@@ -452,6 +452,14 @@
                   </a>
                 </li>
 
+                <li>
+                  <a href="{{url('admin/assign_subject/list')}}" class="nav-link @if(Request::segment(2)== 'assign_subject')active @endif">
+                  <div class="parent-icon"><span class="material-symbols-outlined">account_circle</span>
+                    </div>
+                    <div class="menu-title">Asign Subject</div>
+                  </a>
+                </li>
+
               </ul>
     
           </div>
