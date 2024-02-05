@@ -78,6 +78,9 @@
 											<a href="{{url('admin/assign_subject/edit/'.$value->id)}}" class="btn btn-success btn-sm">Edit</a>
 										</td>
 										<td>
+											<a href="{{url('admin/assign_subject/edit_single/'.$value->id)}}" class="btn btn-success btn-sm">Single Edit</a>
+										</td>
+										<td>
 											<a href="{{url('admin/assign_subject/delete/'.$value->id)}}" class="btn btn-danger btn-sm">Delete</a>
 										</td>
 									</tr>

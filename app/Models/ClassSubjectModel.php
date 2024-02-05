@@ -40,7 +40,7 @@ class ClassSubjectModel extends Model
     }
     static public function getAlreadyFirst($class_id, $subject_id)
     {
-        return self::where('class_id', '=', $class_id)->where('class_id', '=', $class_id)->first();
+        return self::where('class_id', '=', $class_id)->where('subject_id', '=', $subject_id)->first();
     }
 
     static public function getAssignSubjectID($class_id)

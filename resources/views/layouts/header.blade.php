@@ -445,6 +445,13 @@
                   </a>
                 </li>
                 <li>
+                  <a href="{{url('admin/student/list')}}" class="nav-link @if(Request::segment(2)== 'student')active @endif">
+                  <div class="parent-icon"><span class="material-symbols-outlined">account_circle</span>
+                    </div>
+                    <div class="menu-title">Student</div>
+                  </a>
+                </li>
+                <li>
                   <a href="{{url('admin/subject/list')}}" class="nav-link @if(Request::segment(2)== 'subject')active @endif">
                   <div class="parent-icon"><span class="material-symbols-outlined">account_circle</span>
                     </div>
