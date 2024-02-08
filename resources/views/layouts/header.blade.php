@@ -458,12 +458,47 @@
                     <div class="menu-title">Subject</div>
                   </a>
                 </li>
+                <li>
+                  <a href="{{url('admin/teacher/list')}}" class="nav-link @if(Request::segment(2)== 'teacher')active @endif">
+                  <div class="parent-icon"><span class="material-symbols-outlined">account_circle</span>
+                    </div>
+                    <div class="menu-title">Teacher</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="{{url('admin/attendance/list')}}" class="nav-link @if(Request::segment(2)== 'attendance')active @endif">
+                  <div class="parent-icon"><span class="material-symbols-outlined">account_circle</span>
+                    </div>
+                    <div class="menu-title">Attendance</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="{{url('admin/fees/list')}}" class="nav-link @if(Request::segment(2)== 'fees')active @endif">
+                  <div class="parent-icon"><span class="material-symbols-outlined">account_circle</span>
+                    </div>
+                    <div class="menu-title">Fees Collection</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="{{url('admin/routin/list')}}" class="nav-link @if(Request::segment(2)== 'routin')active @endif">
+                  <div class="parent-icon"><span class="material-symbols-outlined">account_circle</span>
+                    </div>
+                    <div class="menu-title">Class Routin</div>
+                  </a>
+                </li>
 
                 <li>
                   <a href="{{url('admin/assign_subject/list')}}" class="nav-link @if(Request::segment(2)== 'assign_subject')active @endif">
                   <div class="parent-icon"><span class="material-symbols-outlined">account_circle</span>
                     </div>
                     <div class="menu-title">Asign Subject</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="{{url('admin/change_password')}}" class="nav-link @if(Request::segment(2)== 'change_password')active @endif">
+                  <div class="parent-icon"><span class="material-symbols-outlined">account_circle</span>
+                    </div>
+                    <div class="menu-title">Change Password</div>
                   </a>
                 </li>
 
