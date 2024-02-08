@@ -412,7 +412,7 @@
               <img src="{{asset('public/assets/images/logo-icon.png')}}" class="logo-img" alt="">
             </div>
             <div class="logo-name flex-grow-1">
-              <h5 class="mb-0">BIDDALOY</h5>
+              <a href="{{url('admin/dashboard')}}"><h5 class="mb-0">BIDDALOY</h5></a>
             </div>
             <div class="sidebar-close ">
               <span class="material-symbols-outlined">close</span>
@@ -424,7 +424,7 @@
               <ul class="metismenu" id="menu">
                 <li>
                   <a href="{{url('admin/dashboard')}}" class="nav-link @if(Request::segment(2)== 'dashboard')active @endif">
-                    <div class="parent-icon"><span class="material-symbols-outlined">home</span>
+                    <div class="parent-icon"><span class="material-symbols-outlined">Home</span>
                     </div>
                     <div class="menu-title">Dashboard</div>
                   </a>
