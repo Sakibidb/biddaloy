@@ -494,12 +494,28 @@
                   </a>
                 </li>
 
+                <li>
+                  <a href="{{url('teacher/change_password')}}" class="nav-link @if(Request::segment(2)== 'change_password')active @endif">
+                  <div class="parent-icon"><span class="material-symbols-outlined">account_circle</span>
+                    </div>
+                    <div class="menu-title">Change Password</div>
+                  </a>
+                </li>
+
                 @elseif(Auth::user()->user_type == 3)
                 <li>
                   <a href="{{url('student/dashboard')}}" class="nav-link @if(Request::segment(2)== 'change_password')active @endif">
                   <div class="parent-icon"><span class="material-symbols-outlined">account_circle</span>
                     </div>
                     <div class="menu-title">Dashboard</div>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="{{url('student/change_password')}}" class="nav-link @if(Request::segment(2)== 'change_password')active @endif">
+                  <div class="parent-icon"><span class="material-symbols-outlined">account_circle</span>
+                    </div>
+                    <div class="menu-title">Change Password</div>
                   </a>
                 </li>
 
@@ -511,6 +527,15 @@
                     <div class="menu-title">Dashboard</div>
                   </a>
                 </li>
+
+                <li>
+                  <a href="{{url('parents/change_password')}}" class="nav-link @if(Request::segment(2)== 'change_password')active @endif">
+                  <div class="parent-icon"><span class="material-symbols-outlined">account_circle</span>
+                    </div>
+                    <div class="menu-title">Change Password</div>
+                  </a>
+                </li>
+
                 @endif
               </ul>
     
