@@ -6,6 +6,7 @@
 
 <hr>
 <h6>Student Search</h6>
+<div class="container-fluid">
 <div class="card-body">
 	<div class="bs-stepper-content">
 		
@@ -38,7 +39,7 @@
 			
 			<div class="row g-3">
 				<div class="col-12 col-lg-12">
-					<input type="date" class="form-control" placeholder="Date" name="date" value="{{ Request::get('date') }}">
+					<input type="date" class="form-control" placeholder="Created Date" name="created_at" value="{{ Request::get('created_at') }}">
 				</div>
 			</div>
 			
@@ -48,6 +49,7 @@
 			</div>
 		</form>
 	</div>
+</div>
 </div>
 
 

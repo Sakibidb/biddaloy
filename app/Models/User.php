@@ -79,11 +79,43 @@ class User extends Authenticatable
                 {
                     $return = $return->where('users.name', 'like', '%' .Request::get('name') . '%');
                 }
+                if(!empty(Request::get('email')))
+                {
+                    $return = $return->where('users.email', 'like', '%' .Request::get('email') . '%');
+                }
+                if(!empty(Request::get('mobile_number')))
+                {
+                    $return = $return->where('users.mobile_number', 'like', '%' .Request::get('mobile_number') . '%');
+                }
+                if(!empty(Request::get('roll_number')))
+                {
+                    $return = $return->where('users.roll_number', 'like', '%' .Request::get('roll_number') . '%');
+                }
+                if(!empty(Request::get('religion')))
+                {
+                    $return = $return->where('users.religion', 'like', '%' .Request::get('religion') . '%');
+                }
+                if(!empty(Request::get('created_at')))
+                {
+                    $return = $return->where('users.created_at', 'like', '%' .Request::get('created_at') . '%');
+                }
                 $return = $return->orderBy('users.id', 'desc')
                 ->paginate(1);
 
     return $return;
 }
+
+
+    static public function getParent()
+    {
+        $return = self::select('users.*')->
+        where('user_type','=',4)->
+        where('is_delete','=',0);
+        $return = $return-> orderBy('id', 'desc')
+        ->paginate(20);
+        return $return;
+    }
+
 
     static public function getEmailSingle ($email)
     {

@@ -6,7 +6,6 @@ use App\Models\ClassModel;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Str;
-
 use Auth;
 use Hash;
 
