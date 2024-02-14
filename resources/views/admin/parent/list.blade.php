@@ -43,7 +43,7 @@
 						
 						<h6>Parent List</h6>
 						
-						<div class="card">
+						<div class="card-body">
 							<div class="card-body">
 								<table class="table table-bordered mb-0">
 									<thead>
@@ -60,6 +60,7 @@
 											<th scope="col">Created Date</th>
 											<th scope="col">Action</th>
 											<th scope="col">Action</th>
+											<th scope="col">Action</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -74,6 +75,7 @@
 												@endif
 											</td>
 											<td>{{$value->name}} {{$value->last_name}} </td>
+											<td>{{$value->email}}</td>
 											<td>{{$value->gender}}</td>											
 											<td>{{$value->mobile_number}}</td>
 											<td>{{$value->occupation}}</td>											
@@ -85,6 +87,9 @@
                                 			</td>
                                 			<td>
                                     			<a href="{{url('admin/parent/delete/'.$value->id)}}" class="btn btn-danger btn-sm">Delete</a>
+                                			</td>
+                                			<td>
+                                    			<a href="{{url('admin/parent/my_student/'.$value->id)}}" class="btn btn-success btn-sm">My Student</a>
                                 			</td>
 										</tr>
 										@endforeach

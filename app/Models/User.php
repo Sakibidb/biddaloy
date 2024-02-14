@@ -100,7 +100,7 @@ class User extends Authenticatable
                     $return = $return->where('users.created_at', 'like', '%' .Request::get('created_at') . '%');
                 }
                 $return = $return->orderBy('users.id', 'desc')
-                ->paginate(1);
+                ->paginate(3);
 
     return $return;
 }
@@ -115,6 +115,61 @@ class User extends Authenticatable
         ->paginate(20);
         return $return;
     }
+
+
+
+    static public function getSearchStudent()
+    {
+        //dd(Request::all());
+
+        if(!empty(Request::get('id')) || !empty(Request::get('name')) || !empty(Request::get('email')))
+        {
+            $return = self::select('users.*', 'class.name as class_name', 'parent.name as parent_name')
+                ->join('users as parent', 'parent.id', '=', 'users.parent_id')
+                ->join('class', 'class.id', '=', 'users.class_id', 'left')
+                ->where('users.user_type', '=', 3)
+                ->where('users.is_delete', '=', 0);
+
+                if(!empty(Request::get('id')))
+                {
+                    $return = $return->where('users.id', Request::get('id'));
+                }
+                if(!empty(Request::get('name')))
+                {
+                    $return = $return->where('users.name', 'like', '%' .Request::get('name') . '%');
+                }
+                if(!empty(Request::get('email')))
+                {
+                    $return = $return->where('users.email', 'like', '%' .Request::get('email') . '%');
+                }
+                if(!empty(Request::get('created_at')))
+                {
+                    $return = $return->where('users.created_at', 'like', '%' .Request::get('created_at') . '%');
+                }
+                $return = $return->orderBy('users.id', 'desc')
+                ->limit(50)
+                ->get();
+
+    return $return;
+        }
+    }
+
+    static public function getMyStudent($paremt_id)
+{
+    $return = self::select('users.*', 'class.name as class_name', 'parent.name as parent_name')
+                ->join('users as parent', 'parent.id', '=', 'users.parent_id', 'left')
+                ->join('class', 'class.id', '=', 'users.class_id', 'left')
+                ->where('users.user_type', '=', 3)
+                ->where('users.parent_id', '=', $paremt_id)
+                ->where('users.is_delete', '=', 0)
+                -> orderBy('users.id', 'desc')
+                ->get();
+
+                return $return;
+        
+    }
+                
+
 
 
     static public function getEmailSingle ($email)

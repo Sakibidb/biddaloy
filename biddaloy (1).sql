@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 13, 2024 at 01:56 PM
+-- Generation Time: Feb 14, 2024 at 02:16 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -194,6 +194,7 @@ INSERT INTO `subject` (`id`, `name`, `type`, `created_by`, `status`, `is_delete`
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `parent_id` int(11) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
   `last_name` varchar(255) DEFAULT NULL,
   `email` varchar(255) NOT NULL,
@@ -226,12 +227,16 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `last_name`, `email`, `email_verified_at`, `password`, `remember_token`, `admission_number`, `roll_number`, `class_id`, `gender`, `date_of_birth`, `caste`, `religion`, `address`, `occupation`, `mobile_number`, `admission_date`, `profile_pic`, `blood_group`, `height`, `weight`, `user_type`, `is_delete`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'admin', NULL, 'admin@gmail.com', NULL, '$2y$12$AnvXxM2uykz4uYV.bjbKQOrY4CFCDun1R4v7a..nFxzLUGol2bBza', 'vsGkO3Ac1b56yh8oZOnKk4PdrhLK5yosSgpWeN7LlVU3SE5tfUnfQJbCkyjg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 0, '2024-01-29 13:33:21', '2024-02-11 22:21:27'),
-(2, 'teacher', NULL, 'teacher@gmail.com', NULL, '$2y$12$VxM1v8qz1TzxDsfwiZsxE.eji7fNQJSw/pGyKJ4CkbIl4C0tsI8F6', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 0, 0, '2024-01-29 13:33:21', '2024-02-11 22:22:18'),
-(3, 'student', NULL, 'student@gmail.com', NULL, '$2y$12$lgWxYITbfQalWfmDrizvferr5iEpV2I9eDmbonGBHqOBubrgCH/LO', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 0, 0, '2024-01-29 13:33:21', '2024-01-22 13:33:21'),
-(4, 'parent', NULL, 'parent@gmail.com', NULL, '$2y$12$lgWxYITbfQalWfmDrizvferr5iEpV2I9eDmbonGBHqOBubrgCH/LO', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 0, 0, '2024-01-29 13:33:21', '2024-01-22 13:33:21'),
-(29, 'Nazmus', 'Sakib', 'sakib@gmail.com', NULL, '$2y$12$jbEBdvqT6tgpy9xePJvZfeT7sqjSIUg0vH7oGZitTRLINfYQxHFxu', NULL, '01', '1274006', 13, 'Male', '1997-02-02', '', 'Islam', NULL, NULL, '01312008372', '2024-02-01', '240213065950yrw4p2qk8cnrq0ornkjzym5svxm0pr.jpg', 'B+', '5.5', '63', 3, 0, 0, '2024-02-13 00:59:50', '2024-02-13 01:00:27');
+INSERT INTO `users` (`id`, `parent_id`, `name`, `last_name`, `email`, `email_verified_at`, `password`, `remember_token`, `admission_number`, `roll_number`, `class_id`, `gender`, `date_of_birth`, `caste`, `religion`, `address`, `occupation`, `mobile_number`, `admission_date`, `profile_pic`, `blood_group`, `height`, `weight`, `user_type`, `is_delete`, `status`, `created_at`, `updated_at`) VALUES
+(1, NULL, 'admin', NULL, 'admin@gmail.com', NULL, '$2y$12$AnvXxM2uykz4uYV.bjbKQOrY4CFCDun1R4v7a..nFxzLUGol2bBza', 'vsGkO3Ac1b56yh8oZOnKk4PdrhLK5yosSgpWeN7LlVU3SE5tfUnfQJbCkyjg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 0, '2024-01-29 13:33:21', '2024-02-11 22:21:27'),
+(2, NULL, 'teacher', NULL, 'teacher@gmail.com', NULL, '$2y$12$VxM1v8qz1TzxDsfwiZsxE.eji7fNQJSw/pGyKJ4CkbIl4C0tsI8F6', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 0, 0, '2024-01-29 13:33:21', '2024-02-11 22:22:18'),
+(3, NULL, 'student', NULL, 'student@gmail.com', NULL, '$2y$12$lgWxYITbfQalWfmDrizvferr5iEpV2I9eDmbonGBHqOBubrgCH/LO', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 0, 0, '2024-01-29 13:33:21', '2024-01-22 13:33:21'),
+(4, NULL, 'parent', NULL, 'parent@gmail.com', NULL, '$2y$12$lgWxYITbfQalWfmDrizvferr5iEpV2I9eDmbonGBHqOBubrgCH/LO', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 0, 0, '2024-01-29 13:33:21', '2024-01-22 13:33:21'),
+(29, 33, 'Nazmus', 'Sakib', 'sakib@gmail.com', NULL, '$2y$12$jbEBdvqT6tgpy9xePJvZfeT7sqjSIUg0vH7oGZitTRLINfYQxHFxu', NULL, '01', '1274006', 13, 'Male', '1997-02-02', '', 'Islam', NULL, NULL, '01312008372', '2024-02-01', '240213065950yrw4p2qk8cnrq0ornkjzym5svxm0pr.jpg', 'B+', '5.5', '63', 3, 0, 0, '2024-02-13 00:59:50', '2024-02-14 06:39:31'),
+(30, NULL, 'Nazmus', 'Sakib', 'sakibnazmus@gmail.com', NULL, '$2y$12$s.rB6FjnyPs0NIh0ICR.wul2KXYzXUZTeGja/BGy84V0FzovNSAdC', NULL, NULL, NULL, NULL, 'Male', NULL, NULL, NULL, NULL, NULL, '01853705638', NULL, '240214055844rb4awovvoywqv6hn2rstbduo74392s.jpg', NULL, NULL, NULL, 4, 0, 0, '2024-02-13 23:58:44', '2024-02-13 23:58:44'),
+(31, NULL, 'Sayem', 'Uddin', 'sayem@gmail.com', NULL, '$2y$12$8uTj0hswSs5DP4tmX1z.kezxHN/VpkN2WE9X/UrDrcmT.7sb1lbHK', NULL, NULL, NULL, NULL, 'Male', NULL, NULL, NULL, '811, Gulshan', 'Teacher', '01915577704', NULL, '240214073454tddn4104ryoxzdszkwhd70w1cjyeeg.jpg', NULL, NULL, NULL, 4, 1, 0, '2024-02-14 00:12:41', '2024-02-14 01:36:57'),
+(33, NULL, 'Saadat', 'Najmus', 'saadat@gmail.com', NULL, '$2y$12$Zx3rtTpfa8MDYcXRFSk/EuuhqBJYlGD7qP.V.Ctk3dzjgWae4J17C', NULL, NULL, NULL, NULL, 'Male', NULL, NULL, NULL, '811, Gulshan', 'Business', '01716477600', NULL, '240214123415kaudcyievpiw4ynjvjoshhrhnf4ixf.jpg', NULL, NULL, NULL, 4, 0, 0, '2024-02-14 06:34:15', '2024-02-14 06:34:15'),
+(34, NULL, 'Anika', 'Tabassum', 'anika@gmail.com', NULL, '$2y$12$/PrlbGs78hKrdTyRurdRl.1HICNcA5v11WfTZRtpnDu7lRvLTdH9u', NULL, '100', '200', 11, 'Female', '2024-02-06', '', 'islam', NULL, NULL, '01596128566', '2024-02-15', '240214123715i2rqes41rwfn9ps37cxfmoklqg4xeq.png', 'A+', '4.9', '45', 3, 0, 0, '2024-02-14 06:37:15', '2024-02-14 06:37:15');
 
 --
 -- Indexes for dumped tables
@@ -333,7 +338,7 @@ ALTER TABLE `subject`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

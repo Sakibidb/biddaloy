@@ -3,7 +3,7 @@
 @section('content')
 
 <main class="page-content">
-	<h6 class="text-uppercase">Add New Admin</h6>
+	<h6 class="text-uppercase">Add New Parent</h6>
 	<hr>
 	<div id="stepper1" class="bs-stepper">
 		<div class="card">
@@ -12,7 +12,7 @@
 			<div class="card-body">
 				<div class="bs-stepper-content">
 
-					<form action="" method="POST">
+					<form action="" method="POST" enctype="multipart/form-data">
                     {{@csrf_field()}}
 
 
@@ -67,7 +67,7 @@
 						<div class="row g-3">
 							<div class="col-12 col-lg-6">
 								<label for="Occupation" class="form-label">Occupation<span style="color: red;">*</span></label>
-								<input type="text" class="form-control" placeholder="Mobile" name="occupation" value="{{old('occupation')}}">
+								<input type="text" class="form-control" placeholder="Occupation" name="occupation" value="{{old('occupation')}}">
 								<div style="color: red">{{$errors->first('occupation')}}</div>
 							</div>
 							<div class="col-12 col-lg-6">
