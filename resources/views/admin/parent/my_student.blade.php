@@ -22,7 +22,7 @@
 			</div>
 			<div class="row g-3">
 				<div class="col-12 col-lg-12">
-					<input type="text" class="form-control" placeholder="Email" name="email" value="{{ Request::get('mail') }}">
+					<input type="text" class="form-control" placeholder="Email" name="email" value="{{ Request::get('email') }}">
 				</div>
 			</div>
 						
