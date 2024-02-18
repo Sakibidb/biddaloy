@@ -10,7 +10,7 @@
 <div class="card-body">
 	<div class="bs-stepper-content">
 		
-		<form action="" method="get">
+		<form action="" method="get" style="display: flex">
 			<div class="row g-3">
 				<div class="col-12 col-lg-12">
 					<input type="text" class="form-control" placeholder="Name" name="name" value="{{Request::get('name') }}">
