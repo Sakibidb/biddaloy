@@ -106,6 +106,48 @@ class User extends Authenticatable
 }
 
 
+static public function getStudentClass($class_id)
+{
+    $return = self::select('users.id', 'users.name', 'users.last_name')
+            ->where('users.user_type', '=', 3)
+            ->where('users.is_delete', '=', 0)
+            ->where('users.class_id', '=', $class_id)
+            ->orderBy('users.id', 'desc')
+            ->get();
+
+    return $return;
+}
+
+    
+
+    static public function getTracher()
+{
+    $return = self::select('users.*')
+                ->where('users.user_type', '=', 2)
+                ->where('users.is_delete', '=', 0);
+                if(!empty(Request::get('name')))
+                {
+                    $return = $return->where('users.name', 'like', '%' .Request::get('name') . '%');
+                }
+                if(!empty(Request::get('email')))
+                {
+                    $return = $return->where('users.email', 'like', '%' .Request::get('email') . '%');
+                }
+                if(!empty(Request::get('mobile_number')))
+                {
+                    $return = $return->where('users.mobile_number', 'like', '%' .Request::get('mobile_number') . '%');
+                }
+                if(!empty(Request::get('created_at')))
+                {
+                    $return = $return->where('users.created_at', 'like', '%' .Request::get('created_at') . '%');
+                }
+                $return = $return->orderBy('users.id', 'desc')
+                ->paginate(3);
+
+    return $return;
+}
+
+
     static public function getParent()
     {
         $return = self::select('users.*')->

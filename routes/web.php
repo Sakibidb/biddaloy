@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\ClassSubjectController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ParentController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -66,6 +68,16 @@ Route::get('admin/parent/delete/{id}', [ParentController::class, 'delete']);
 Route::get('admin/parent/my_student/{id}', [ParentController::class, 'myStudent']);
 Route::get('admin/parent/assign_student_parent/{student_id}/{parent_id}', [ParentController::class, 'AssignStudentParent']);
 
+//teacher
+Route::get('admin/teacher/list', [TeacherController::class, 'list']);
+Route::get('admin/teacher/add', [TeacherController::class, 'add']);
+Route::post('admin/teacher/add', [TeacherController::class, 'insert']);
+Route::get('admin/teacher/edit/{id}', [TeacherController::class, 'edit']);
+Route::post('admin/teacher/edit/{id}', [TeacherController::class, 'update']);
+Route::get('admin/teacher/delete/{id}', [TeacherController::class, 'delete']);
+Route::get('admin/teacher/my_student/{id}', [TeacherController::class, 'myStudent']);
+Route::get('admin/teacher/assign_student_parent/{student_id}/{parent_id}', [TeacherController::class, 'AssignStudentParent']);
+
 //class
 Route::get('admin/class/list', [ClassController::class, 'list']);
 Route::get('admin/class/add', [ClassController::class, 'add']);
@@ -95,6 +107,9 @@ Route::post('admin/assign_subject/edit_single/{id}', [ClassSubjectController::cl
 
 Route::get('admin/change_password', [UserController::class, 'change_password']);
 Route::post('admin/change_password', [UserController::class, 'update_change_password']);
+
+//attendance
+Route::get('admin/attendance/student', [AttendanceController::class, 'AttendanceStudent']);
 
 
 
