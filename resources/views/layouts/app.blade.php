@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
 
+
+
     <!--plugins-->
     <link href="{{asset('public/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet" >
     <link href="{{asset('public/assets/plugins/metismenu/css/metisMenu.min.css')}}" rel="stylesheet">
@@ -51,5 +53,7 @@
     <!--BS Scripts-->
     <script src="{{asset('public/assets/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('public/assets/js/main.js')}}"></script>
+
+    @yield('script')
   </body>
 </html>

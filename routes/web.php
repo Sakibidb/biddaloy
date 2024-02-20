@@ -110,6 +110,11 @@ Route::post('admin/change_password', [UserController::class, 'update_change_pass
 
 //attendance
 Route::get('admin/attendance/student', [AttendanceController::class, 'AttendanceStudent']);
+Route::post('admin/attendance/student/save', [AttendanceController::class, 'AttendanceStudentSubmit']);
+
+//attendance_report
+
+Route::get('admin/attendance/report', [AttendanceController::class, 'AttendanceReport']);
 
 
 

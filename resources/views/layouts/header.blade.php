@@ -482,11 +482,20 @@
                     <div class="menu-title">Asign Subject</div>
                   </a>
                 </li>
+
                 <li>
                   <a href="{{url('admin/attendance/student')}}" class="nav-link @if(Request::segment(2)== 'attendance')active @endif">
                   <div class="parent-icon"><span class="material-symbols-outlined">account_circle</span>
                     </div>
                     <div class="menu-title">Student Attendance</div>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="{{url('admin/attendance/report')}}" class="nav-link @if(Request::segment(2)== 'attendance_report')active @endif">
+                  <div class="parent-icon"><span class="material-symbols-outlined">account_circle</span>
+                    </div>
+                    <div class="menu-title">Attendance Report</div>
                   </a>
                 </li>
 
