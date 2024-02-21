@@ -48,4 +48,13 @@ class AttendanceController extends Controller
 
         echo json_encode($json);
     }
+
+    public function AttendanceReport(Request $request)
+    {
+        $data['getClass'] = ClassModel::getClass();
+
+        $data['header_title'] = "Attendance Report";
+        return view('admin.attendance.report', $data);
+
+    }
 }
